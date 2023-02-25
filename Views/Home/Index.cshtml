@@ -1,0 +1,29 @@
+﻿@using TresPorcento.Controllers
+@{
+    ViewData["Title"] = "Três Porcento";
+    ViewData["Porcentagem"] = $"Chances de acerto {HomeController.MostrarChancesDeAcerto:F2}%";
+    ViewData["DicaMaior"] = "O número é maior que: " + HomeController.LimiteMenorNumero;
+    ViewData["DicaMenor"] = "O número é menor que: " + HomeController.LimiteMaiorNumero;
+}
+
+<div class="text-center">
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p>@ViewData["Porcentagem"]</p>
+      </blockquote>
+        <figcaption class="blockquote-footer">
+            @ViewData["DicaMaior"]
+        </figcaption>
+        <figcaption class="blockquote-footer">
+            @ViewData["DicaMenor"]    
+        </figcaption>
+    </figure>
+    
+    <form method="Post">
+        <div class="mb-3">
+            <input type="number" class="form-control" name="numeroEscolhidoPeloUsuario" placeholder="Informe o n°"/>
+        </div>
+        <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+    </form>
+    
+</div>
