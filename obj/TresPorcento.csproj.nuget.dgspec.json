@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/sobreira/Tres_Porcento/TresPorcento.csproj": {}
+    "/home/sobreira/Code/Tres_Porcento/TresPorcento.csproj": {}
   },
   "projects": {
-    "/home/sobreira/Tres_Porcento/TresPorcento.csproj": {
+    "/home/sobreira/Code/Tres_Porcento/TresPorcento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/sobreira/Tres_Porcento/TresPorcento.csproj",
+        "projectUniqueName": "/home/sobreira/Code/Tres_Porcento/TresPorcento.csproj",
         "projectName": "TresPorcento",
-        "projectPath": "/home/sobreira/Tres_Porcento/TresPorcento.csproj",
+        "projectPath": "/home/sobreira/Code/Tres_Porcento/TresPorcento.csproj",
         "packagesPath": "/home/sobreira/.nuget/packages/",
-        "outputPath": "/home/sobreira/Tres_Porcento/obj/",
+        "outputPath": "/home/sobreira/Code/Tres_Porcento/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/sobreira/.nuget/NuGet/NuGet.Config"

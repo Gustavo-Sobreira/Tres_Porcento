@@ -8,9 +8,9 @@
 
 <div class="text-center">
     <figure class="text-center">
-      <blockquote class="blockquote">
-        <p>@ViewData["Porcentagem"]</p>
-      </blockquote>
+        <blockquote class="blockquote">
+            <p>@ViewData["Porcentagem"]</p>
+        </blockquote>
         <figcaption class="blockquote-footer">
             @ViewData["DicaMaior"]
         </figcaption>
@@ -19,11 +19,30 @@
         </figcaption>
     </figure>
     
-    <form method="Post">
+    <form>
         <div class="mb-3">
-            <input type="number" class="form-control" name="numeroEscolhidoPeloUsuario" placeholder="Informe o n°"/>
+            <input type="number" class="form-control" id="numeroUsuario" placeholder="Informe o n°" value=0/>
         </div>
-        <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+        
+        <button class="btn btn-success" id="button">Enviar</button>
+        <a class="btn btn-warning" href="https://localhost:7184/">Recomeçar</a>
     </form>
-    
+
 </div>
+<script>
+
+    var button = document.getElementById('button');
+    var URL = "https://localhost:7184/";
+    
+    function openInNewTab(URL) {
+      var antiga = window;
+      var win = window.open(URL, '_blank');
+      win.focus();
+      antiga.close();
+    }
+
+    button.onclick = function() {
+        openInNewTab(URL + document.getElementById("numeroUsuario").value);
+    }
+    
+</script>

@@ -6,9 +6,9 @@ namespace TresPorcento.Controllers;
 
 public class HomeController : Controller
 {
-    private static readonly System.Random random = new System.Random();
-    private static readonly decimal _numeroCorreto = random.Next(0,100);
-    private static decimal _numUsuario = 0;
+    private static readonly Random Random = new System.Random();
+    private static decimal _numeroCorreto; 
+    private static decimal _numUsuario;
     private static decimal _vidasTotais = 3;
 
     public static  decimal LimiteMenorNumero { get; private set; }
@@ -18,6 +18,7 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Index()
     {
+        _numeroCorreto = Random.Next(0,100);
         MostrarChancesDeAcerto = 3;
         LimiteMenorNumero = 0;
         LimiteMaiorNumero = 100;
@@ -25,14 +26,15 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpPost]
-    public IActionResult Index(decimal numeroEscolhidoPeloUsuario)
+    [HttpGet]
+    [Route("/{numeroUsuario}")]
+    public IActionResult Index([FromRoute(Name = "numeroUsuario")] decimal numeroUsuario)
     {
         if (_vidasTotais > 0)
         {
-            _numUsuario = numeroEscolhidoPeloUsuario;
+            _numUsuario = numeroUsuario;
             CalcularChanceDeAcerto();
-            return View();
+            return  View();
         }
         return View();
     }
